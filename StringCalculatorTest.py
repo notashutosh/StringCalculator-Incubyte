@@ -3,6 +3,14 @@ from StringCalculator import sumOfString
 
 
 class StringCalculatorTest(unittest.TestCase):
+    """
+    Test cases for the sumOfString function in StringCalculator.py
+    Spec:
+    https://blog.incubyte.co/blog/tdd-assessment/
+    and 
+    https://osherove.com/tdd-kata-1/
+    """
+
     def test_empty(self):
         self.assertEqual(sumOfString(""), 0)
 
