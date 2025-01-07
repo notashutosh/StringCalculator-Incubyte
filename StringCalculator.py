@@ -16,7 +16,7 @@ def getNumbersListFromInput(str, delimiters=[',']):
     A regular expression is created by combining the delimiters using the '|' operator after escaping them. 
     This is then used to split the input string. 
     """
-    return re.split(f'{"|".join(map(re.escape, delimiters))}', str)
+    return [int(x) for x in re.split(f'{"|".join(map(re.escape, delimiters))}', str)]
 
 
 def parseInputString(input):
@@ -70,8 +70,7 @@ def sumOfString(input):
 
     negative_numbers = []
     negatives_present = False
-    for numberString in parseInputString(input):
-        number = int(numberString)
+    for number in parseInputString(input):
         if number >= 0:
             if number > 1000:
                 continue
