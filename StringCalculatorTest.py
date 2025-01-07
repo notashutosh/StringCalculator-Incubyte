@@ -21,5 +21,11 @@ class StringCalculatorTest(unittest.TestCase):
     def test_custom_delimiter_multichar(self):
         self.assertEqual(sumOfString("//***\n1***1"), 2)
 
+    def test_negative_numbers(self):
+        with self.assertRaises(ValueError) as context:
+            sumOfString("-1")
+        self.assertEqual(str(context.exception),
+                         "negative numbers not allowed -1")
+
 
 unittest.main()
