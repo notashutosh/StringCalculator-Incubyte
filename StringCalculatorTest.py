@@ -15,5 +15,8 @@ class StringCalculatorTest(unittest.TestCase):
     def test_comma(self):
         self.assertEqual(sumOfString("1,1"), 2)
 
+    def test_custom_delimiter_not_newline(self):
+        self.assertEqual(sumOfString("//;\n1;1"), 2)
+
 
 unittest.main()
