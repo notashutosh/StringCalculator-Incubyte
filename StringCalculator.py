@@ -13,7 +13,8 @@ def getNumbersListFromInput(str, delimiters=[',']):
         list: A list of substrings obtained by splitting the input string using the specified delimiters.
 
     Notes:
-    - a regular expression is created by combining the delimiters using the '|' operator after escaping them. This is then used to split the input string. 
+    A regular expression is created by combining the delimiters using the '|' operator after escaping them. 
+    This is then used to split the input string. 
     """
     return re.split(f'{"|".join(map(re.escape, delimiters))}', str)
 
@@ -22,7 +23,10 @@ def parseInputString(input):
     """
     Parses the input string to extract numbers.
 
-    If the input string starts with "//", it indicates that custom delimiters are used. The custom delimiters are extracted from the string, and the remaining part of the string is considered as the list of numbers. If the input string does not start with "//", the default delimiter (comma) is used.
+    If the input string starts with "//", it indicates that custom delimiters are used. 
+    The custom delimiters are extracted from the string, and the remaining part of the string
+    is considered as the list of numbers. If the input string does not start with "//", 
+    the default delimiter (comma) is used.
 
     Args:
         input (str): The input string containing delimiters and numbers.
