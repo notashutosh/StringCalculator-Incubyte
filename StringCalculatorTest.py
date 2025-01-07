@@ -9,5 +9,8 @@ class StringCalculatorTest(unittest.TestCase):
     def test_nonempty(self):
         self.assertEqual(sumOfString("1"), 1)
 
+    def test_multidigit(self):
+        self.assertEqual(sumOfString("11"), 11)
+
 
 unittest.main()
