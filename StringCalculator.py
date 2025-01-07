@@ -1,7 +1,7 @@
 import re
 
 
-def getNumbersListFromInput(str, delimiters=[',']):
+def getNumbersList(str, delimiters=[',']):
     """
     Splits the input string using the specified delimiters.
 
@@ -10,7 +10,7 @@ def getNumbersListFromInput(str, delimiters=[',']):
         delimiters (list, optional): A list of delimiter strings to split the input string. Defaults to [','].
 
     Returns:
-        list: A list of substrings obtained by splitting the input string using the specified delimiters.
+        list: A list of numbers obtained by splitting the input string using the specified delimiters.
 
     Notes:
     A regular expression is created by combining the delimiters using the '|' operator after escaping them. 
@@ -41,7 +41,7 @@ def parseInputString(input):
         numberString = input
         delimiters = [',']
 
-    return getNumbersListFromInput(numberString, delimiters)
+    return getNumbersList(numberString, delimiters)
 
 
 def sumOfString(input):
