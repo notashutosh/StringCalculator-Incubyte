@@ -18,9 +18,6 @@ class StringCalculatorTest(unittest.TestCase):
     def test_custom_delimiter_not_newline(self):
         self.assertEqual(sumOfString("//;\n1;1"), 2)
 
-    def test_custom_delimiter_multichar(self):
-        self.assertEqual(sumOfString("//***\n1***1"), 2)
-
     def test_negative_numbers(self):
         with self.assertRaises(ValueError) as context:
             sumOfString("-1")
@@ -44,6 +41,10 @@ class StringCalculatorTest(unittest.TestCase):
             sumOfString("//;\n1;-2")
         self.assertEqual(str(context.exception),
                          "negative numbers not allowed -2")
+
+    # BONUS TEST CASES
+    def test_custom_delimiter_multichar(self):
+        self.assertEqual(sumOfString("//***\n1***1"), 2)
 
     def test_ignore_superthousand(self):
         self.assertEqual(sumOfString("1001,2"), 2)
