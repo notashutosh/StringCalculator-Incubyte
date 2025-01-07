@@ -70,15 +70,15 @@ def sumOfString(input):
 
     negative_numbers = []
     negatives_present = False
-    for number in parseInputString(input):
-        n = int(number)
-        if n >= 0:
-            if n > 1000:
+    for numberString in parseInputString(input):
+        number = int(numberString)
+        if number >= 0:
+            if number > 1000:
                 continue
-            sum += n
+            sum += number
         else:
             negatives_present = True
-            negative_numbers.append(n)
+            negative_numbers.append(number)
 
     if negatives_present:
         raise ValueError(
