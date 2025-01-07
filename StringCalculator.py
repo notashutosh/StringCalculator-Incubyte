@@ -15,6 +15,8 @@ def sumOfString(input):
     for number in numberString.split(delimiter):
         n = int(number)
         if n >= 0:
+            if n > 1000:
+                continue
             sum += n
         else:
             negatives_present = True
