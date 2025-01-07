@@ -1,7 +1,7 @@
 import re
 
 
-def splitString(str, delimiters=[',']):
+def getNumbersListFromInput(str, delimiters=[',']):
     """
     Splits the input string using the specified delimiters.
 
@@ -18,21 +18,36 @@ def splitString(str, delimiters=[',']):
     return re.split(f'{"|".join(map(re.escape, delimiters))}', str)
 
 
-def sumOfString(input):
-    if len(input) == 0:
-        return 0
-    sum = 0
-    delimiters = [',']
+def parseInputString(input):
+    """
+    Parses the input string to extract numbers.
 
+    If the input string starts with "//", it indicates that custom delimiters are used. The custom delimiters are extracted from the string, and the remaining part of the string is considered as the list of numbers. If the input string does not start with "//", the default delimiter (comma) is used.
+
+    Args:
+        input (str): The input string containing delimiters and numbers.
+
+    Returns:
+        list: A list of numbers as strings, split by the specified delimiters.
+    """
     if input.startswith("//"):
         delimiterString, numberString = input.split("\n")
         delimiters = delimiterString[2:].strip("[]").split("][")
     else:
         numberString = input
+        delimiters = [',']
+
+    return getNumbersListFromInput(numberString, delimiters)
+
+
+def sumOfString(input):
+    if len(input) == 0:
+        return 0
+    sum = 0
 
     negative_numbers = []
     negatives_present = False
-    for number in splitString(numberString, delimiters):
+    for number in parseInputString(input):
         n = int(number)
         if n >= 0:
             if n > 1000:
