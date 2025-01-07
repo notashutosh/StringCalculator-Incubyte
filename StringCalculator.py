@@ -41,6 +41,25 @@ def parseInputString(input):
 
 
 def sumOfString(input):
+    """
+    Calculate the sum of numbers in a given string.
+
+    This function takes a string input, parses it for numbers, and returns the sum of those numbers.
+    It ignores numbers greater than 1000 and raises an exception if any negative numbers are found.
+
+    Spec:
+    https://blog.incubyte.co/blog/tdd-assessment/
+    and 
+    https://osherove.com/tdd-kata-1/
+
+    Examples:
+    input: "" -> output: 0
+    input: 1,1 -> output: 2
+    input: //***\n1***1 -> output: 2
+    input: -1, -2 -> raises ValueError with msg 'negative numbers not allowed -1,-2'
+    input: //[;][***]\n1;2***3" -> output: 6
+    input: 1001,2 -> output: 2
+    """
     if len(input) == 0:
         return 0
     sum = 0
