@@ -12,5 +12,8 @@ class StringCalculatorTest(unittest.TestCase):
     def test_multidigit(self):
         self.assertEqual(sumOfString("11"), 11)
 
+    def test_comma(self):
+        self.assertEqual(sumOfString("1,1"), 2)
+
 
 unittest.main()
