@@ -51,5 +51,8 @@ class StringCalculatorTest(unittest.TestCase):
     def test_multiple_delimiters(self):
         self.assertEqual(sumOfString("//[;][***]\n1;2***3"), 6)
 
+    def test_multiple_delimiters_multichar(self):
+        self.assertEqual(sumOfString("//[;;;][***]\n1;;;3***3"), 7)
+
 
 unittest.main()
