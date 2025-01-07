@@ -48,5 +48,8 @@ class StringCalculatorTest(unittest.TestCase):
     def test_ignore_superthousand(self):
         self.assertEqual(sumOfString("1001,2"), 2)
 
+    def test_multiple_delimiters(self):
+        self.assertEqual(sumOfString("//[;][***]\n1;2***3"), 6)
+
 
 unittest.main()
