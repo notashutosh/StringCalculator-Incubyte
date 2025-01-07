@@ -1,12 +1,12 @@
 import re
 
 
-def getNumbersList(str, delimiters=[',']):
+def getNumbersList(input, delimiters=[',']):
     """
     Splits the input string using the specified delimiters.
 
     Args:
-        str (str): The input string to be split.
+        input (str): The input string to be split.
         delimiters (list, optional): A list of delimiter strings to split the input string. Defaults to [','].
 
     Returns:
@@ -16,7 +16,7 @@ def getNumbersList(str, delimiters=[',']):
     A regular expression is created by combining the delimiters using the '|' operator after escaping them. 
     This is then used to split the input string. 
     """
-    return [int(x) for x in re.split(f'{"|".join(map(re.escape, delimiters))}', str)]
+    return [int(x) for x in re.split(f'{"|".join(map(re.escape, delimiters))}', input)]
 
 
 def parseInputString(input):
