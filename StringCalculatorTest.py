@@ -45,5 +45,8 @@ class StringCalculatorTest(unittest.TestCase):
         self.assertEqual(str(context.exception),
                          "negative numbers not allowed -2")
 
+    def test_ignore_superthousand(self):
+        self.assertEqual(sumOfString("1001,2"), 2)
+
 
 unittest.main()
