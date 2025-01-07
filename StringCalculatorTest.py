@@ -1,4 +1,5 @@
 import unittest
+from StringCalculator import sumOfString
 
 
 class StringCalculatorTest(unittest.TestCase):
